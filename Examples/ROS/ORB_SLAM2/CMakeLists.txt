@@ -77,6 +77,8 @@ target_link_libraries(MonoAR
 ${LIBS}
 )
 
+find_package(boost_system)
+
 # Node for stereo camera
 rosbuild_add_executable(Stereo
 src/ros_stereo.cc
@@ -84,6 +86,7 @@ src/ros_stereo.cc
 
 target_link_libraries(Stereo
 ${LIBS}
+boost_system
 )
 
 # Node for RGB-D camera
@@ -93,5 +96,6 @@ src/ros_rgbd.cc
 
 target_link_libraries(RGBD
 ${LIBS}
+boost_system
 )
 
